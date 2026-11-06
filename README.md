@@ -2,6 +2,7 @@
 ### Reciclagem de Representações, Eficiência Paramétrica e Inferência Adaptativa na Classificação de Resíduos (TrashNet)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/patryckalves/trashnet-frugal-learning/blob/main/notebooks/02_training.ipynb)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models%20%26%20Artifacts-yellow)](https://huggingface.co/patryckalves/trashnet-frugal-learning)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![UNIFOR CCT](https://img.shields.io/badge/UNIFOR-CCT-003366.svg)](https://unifor.br)
