@@ -5,7 +5,11 @@ description = "Pipelines de Aprendizado Frugal e Classificação de Resíduos no
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
-    { name = "Patryck", email = "patryck@outlook.com" }
+    { name = "Anderson Cavalcante Moreira Lima" },
+    { name = "Barbara Nepomuceno Guimarães" },
+    { name = "Bianca Torres" },
+    { name = "Lucas de Souza Macedo" },
+    { name = "Patryck Harley Alves Barros" },
 ]
 dependencies = [
     "ipykernel>=6.29.0",

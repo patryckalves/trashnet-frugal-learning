@@ -9,6 +9,13 @@
 **Universidade de Fortaleza (UNIFOR) — Centro de Ciências Tecnológicas (CCT)**  
 **Disciplina:** Redes Neurais Artificiais  
 
+**Equipe:**
+* Anderson Cavalcante Moreira Lima
+* Barbara Nepomuceno Guimarães
+* Bianca Torres
+* Lucas de Souza Macedo
+* Patryck Harley Alves Barros  
+
 ---
 
 ## Fundamentação Teórica: Frugal AI
@@ -19,7 +26,7 @@ A abordagem apoia-se em três pilares fundamentais:
 
 * **Frugalidade de Dados (*Data Parsimony*):** Mitigação do desafio de escassez amostral (1.768 imagens de treino) através da reciclagem de representações visuais universais pré-treinadas no ImageNet-1k, elevando a acurácia de 56,3% para 92,4%.
 * **Frugalidade Paramétrica (*Parameter Efficiency*):** Congelamento de 78% do *backbone* convolucional via *Linear Probing*, atualizando apenas os 337k parâmetros da cabeça linear (21,96% da rede) e retendo 99,72% da acurácia máxima.
-* **Frugalidade de Inferência (*Adaptive Inference*):** Aplicação de regras de parada antecipada baseadas em incerteza calibrada, permitindo que 80,5% do fluxo total de resíduos encerre a computação precocemente com alta confiança ($\tau \ge 0,85$).
+* **Frugalidade de Inferência (*Adaptive Inference*):** Aplicação de regras de parada antecipada baseadas em incerteza calibrada, permitindo que 82,4% do fluxo total de resíduos encerre a computação precocemente com alta confiança ($\tau \ge 0,85$).
 
 ---
 
@@ -44,7 +51,7 @@ Todos os modelos foram avaliados sobre a mesma partição canônica de teste (38
 1. **Colapso da MLP vs Invariância Convolucional:** Com 18,9M parâmetros, a MLP memorizou espuriamente o fundo branco (35% de acurácia). A CNN compacta com `GlobalAveragePooling2D` manteve contagem invariante (94.662 parâmetros) e preservou capacidade de generalização.
 2. **Resgate da Classe Minoritária:** O balanceamento de perda multiplicou por 19x o recall da classe crítica minoritária *trash* (de 5% para 95%).
 3. **Validação do Linear Probing:** Treinar apenas 22% dos parâmetros preserva **99,72% da acurácia máxima**, demonstrando que os filtros universais do ImageNet dispensam reajuste profundo para resíduos sólidos.
-4. **Parada Antecipada:** Materiais macroscopicamente homogêneos (*cardboard* com 90,0% e *paper* com 85,4%) atingem rápida certeza preditiva, permitindo que **80,5% do fluxo contínuo** encerre o processamento antecipadamente, reduzindo o custo computacional de inferência.
+4. **Parada Antecipada:** Materiais macroscopicamente homogêneos (*cardboard* com 88,3% e *paper* com 85,4%) atingem rápida certeza preditiva, permitindo que **82,4% do fluxo contínuo** encerre o processamento antecipadamente ($\tau \ge 0,85$), reduzindo o custo computacional de inferência em 53,5%.
 
 ---
 
