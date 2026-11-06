@@ -1,0 +1,30 @@
+# Ambientes virtuais e pacotes Python
+.venv/
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.pytest_cache/
+
+# Sistema operacional e IDEs
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Dados gerados durante a execução do método
+data/
+
+# Resultados e artefatos de treinamento gerados na execução
+results/
+artifacts/
+runs/
+models/
+*.keras
+*.pt
+*.h5
+*.onnx
+*.zip

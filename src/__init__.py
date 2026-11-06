@@ -1,0 +1,3 @@
+"""
+TrashNet Classification Package
+"""
