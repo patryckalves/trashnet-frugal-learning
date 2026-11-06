@@ -103,9 +103,46 @@ cd trashnet-frugal-learning
 # 2. Sincronizar o ambiente virtual e dependências
 uv sync
 
-# 3. Iniciar o Jupyter e rodar o pipeline
+# 3. Iniciar o Jupyter e rodar o pipeline completo
 uv run jupyter lab notebooks/02_training.ipynb
 ```
+
+---
+
+### 3. Avaliação dos Modelos Salvos (Sem Novo Treinamento)
+
+Conforme orientação da rubrica de avaliação, é possível inspecionar as métricas consolidadas, reproduzir as matrizes de confusão e gerar os relatórios finais sobre as **380 amostras do conjunto de teste** utilizando os modelos e registros salvos, sem necessidade de reexecutar os treinamentos:
+
+```bash
+# Execução direta com a biblioteca padrão do Python (saída instantânea):
+python3 src/evaluate.py
+```
+
+---
+
+## Modelos e Artefatos Salvos (Download Livre no Hugging Face)
+
+Todos os pesos dos modelos (.keras e .pt), matrizes de confusão, divisões estratificadas e registros de métricas estão hospedados publicamente com download livre via **Git LFS** no **Hugging Face Model Hub**:
+
+* 🔗 **Repositório de Pesos e Registros:** [https://huggingface.co/patryckalves/trashnet-frugal-learning](https://huggingface.co/patryckalves/trashnet-frugal-learning)
+* 📂 **Modelos Disponíveis:**
+  * `models/model_E1.keras` e `models/model_E2.keras` (MLP 18.9M parâmetros, com e sem pesos)
+  * `models/model_E3.keras` e `models/model_E4.keras` (CNN 128x96 com GAP, melhor modelo tábua rasa)
+  * `models/model_E5.keras` e `models/model_E6.keras` (CNN 256x192 e 512x384 com GAP)
+  * `models/yolo11n_linear_probing.pt` (Linear Probing, 21,96% parâmetros — 92,11% acurácia)
+  * `models/yolo11n_full_finetuning.pt` (Full Fine-Tuning — 92,37% acurácia)
+  * `models/yolo11n_label_smoothing.pt` e `models/yolo11n_combined.pt`
+
+---
+
+## Dependências e Versões
+
+* **Python:** `>= 3.11`
+* **PyTorch:** `2.5.0+`
+* **Ultralytics:** `8.3.0+`
+* **TensorFlow / Keras:** `2.16.0+`
+* **Scikit-Learn:** `1.5.0+`
+* **Matplotlib / Seaborn:** `3.8.0+ / 0.13.0+`
 
 ---
 
